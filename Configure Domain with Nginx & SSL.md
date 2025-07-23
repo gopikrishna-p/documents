@@ -50,7 +50,9 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 }
+```
 
+```nginx
 server {
     listen 80;
     server_name bi.deepgrid.in;
