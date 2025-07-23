@@ -1,6 +1,3 @@
-Here's the entire text converted into Markdown format:
-
-```markdown
 # Complete Guide to Configure Domain with Nginx & SSL (Let's Encrypt)
 
 ## 🎯 Objective
