@@ -8,7 +8,7 @@ if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=5010)
 ```
 
----
+
 
 ## 📁 `app/frontend/craco.config.js`
 
@@ -25,7 +25,7 @@ devServer: (devServerConfig) => {
 },
 ```
 
----
+
 
 ## 📁 `app/frontend/package.json`
 
