@@ -37,7 +37,7 @@ devServer: (devServerConfig) => {
 }
 ```
 
----
+
 
 ## 📁 `app/backend/.env`
 
@@ -46,7 +46,7 @@ MONGO_URL="mongodb://localhost:27017"
 DB_NAME="spearon_finance_dashboard"
 ```
 
----
+
 
 ## 📁 `app/frontend/.env`
 
