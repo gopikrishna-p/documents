@@ -1,0 +1,30 @@
+hr.deepgrid.in
+Administrator : admin@glovis678  admin@deepgrid
+
+
+ssh -i "C:\Users\GOPI KRISHNA-P\.ssh\ashrithllmdrive\ashrithllmdrive" gcp_user@34.28.138.99           
+
+ssh -i "C:\Users\GOPI KRISHNA-P\.ssh\gcpuser\gcp_key" gcp_user@34.60.220.250            ---gcp_user
+
+https://codewithkarani.com/2022/08/18/install-erpnext-version-14/?srsltid=AfmBOooucREGkyifwZV7Kc-mRMIDWodmVSgSGdtL_5gNP_GDWUTS65Pm
+
+
+
+Host gcp-server
+    HostName 34.28.138.99
+    User gcp_user
+    IdentityFile "C:/Users/GOPI KRISHNA-P/.ssh/ashrithllmdrive"
+
+
+🔄 Alternative: Select All and Delete (Visual Mode)
+Press Esc to ensure you're not in insert mode.
+
+Press ggVG (in sequence):
+gg – go to the top of the file.
+V – start linewise visual selection.
+G – select to the end of the file.
+Press d – to delete all selected text.
+
+
+
+
