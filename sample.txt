@@ -25,6 +25,8 @@ V – start linewise visual selection.
 G – select to the end of the file.
 Press d – to delete all selected text.
 
-
-
+---------------------------------------------------------------------
+npx @react-native-community/cli@latest init SmartN --version 0.75.0
+@react-native-community/cli@20.0.2
+----------------------------------------------------------------------
 
