@@ -54,4 +54,13 @@ or from outside:
 curl -I https://hr.deepgrid.in
 ```
 
+```bash
+worker.1      | /bin/sh: 1: cannot create logs/worker.error.log: Permission denied
+sudo chown -R gcp_user:gcp_user ~/frappe-bench-v15/logs
+sudo chown -R gcp_user:gcp_user ~/frappe-bench-v15
+
+```
+
+
+
 ---
