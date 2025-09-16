@@ -55,3 +55,43 @@ REACT_APP_BACKEND_URL=/server
 WDS_SOCKET_PORT=443
 ```
 
+
+```env
+REACT_APP_BACKEND_URL = /server
+WDS_SOCKET_PORT = 443
+const API = process.env.NODE_ENV === 'development' ? '/api' : `${BACKEND_URL}/api`;
+const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+```
+
+
+## `Replace the existing getBackendUrl and API setup in your Dashboard component with this`
+
+```env
+// 
+
+const getBackendUrl = () => {
+  const hostname = window.location.hostname;
+  
+  // Production environment detection
+  if (hostname !== 'localhost' && hostname !== '127.0.0.1') {
+    return `${window.location.origin}/server`;
+  }
+  
+  // Local development - use environment variable or fallback
+  return process.env.REACT_APP_BACKEND_URL || 'http://localhost:5020';
+};
+
+const BACKEND_URL = getBackendUrl();
+const API = `${BACKEND_URL}/api`;
+
+console.log('Environment:', {
+  hostname: window.location.hostname,
+  BACKEND_URL,
+  API,
+  env: process.env.REACT_APP_BACKEND_URL
+});
+
+// Rest of your component logic remains the same...
+```
+
+
