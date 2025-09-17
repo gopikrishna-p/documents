@@ -58,9 +58,13 @@ curl -I https://hr.deepgrid.in
 worker.1      | /bin/sh: 1: cannot create logs/worker.error.log: Permission denied
 sudo chown -R gcp_user:gcp_user ~/frappe-bench-v15/logs
 sudo chown -R gcp_user:gcp_user ~/frappe-bench-v15
-
 ```
-
-
-
 ---
+
+### ✅ Database details
+```bash
+mysql -u root -p
+root
+show databases;
+describe `tabProject Employee Assignment`;
+```
