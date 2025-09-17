@@ -1,0 +1,88 @@
+npx @react-native-community/cli init HRMSAppNew
+
+npx @react-native-community/cli@latest init SmartN --version 0.75.0
+
+@react-native-community/cli@20.0.2
+
+
+npx react-native run-android
+npx react-native run-android --deviceId ovqcgmtc4trcm7tg
+
+npm start
+npm start -- --reset-cache
+
+npx react-native doctor
+
+gradlew.bat --status
+gradlew --stop
+
+netstat -ano | findstr :8081
+taskkill /PID 20208 /F
+
+adb devices
+
+cd android
+./gradlew assembleRelease
+
+You’ll find APK at:
+android/app/build/outputs/apk/release/app-release.apk
+
+\android\app\build\outputs\apk\release\app-release.apk
+
+
+Android gradle plugin: 8.6.0
+Gradle: 8.9
+
+Welcome to Metro v0.80.12
+React Native your project is running on v0.75.5
+
+==============================================================================
+gradlew clean
+
+# Clear caches
+watchman watch-del-all
+rm -rf node_modules
+npm install
+
+# Android-specific
+cd android
+./gradlew clean
+cd ..
+
+# Rebuild
+npx react-native run-android
+
+Android gradle plugin: 8.9.2
+Gradle: 8.14.1
+==============================================================================
+
+
+=================================================================================================================================================================
+
+
+
+# 1) Go into the Android folder of your React Native project
+cd android
+
+# 2) Stop (kill) every Gradle daemon that might be hanging around
+.\gradlew --stop        # or: gradlew.bat --stop
+
+# 3) Double-check: this should now say “No Gradle daemons are running.”
+.\gradlew --status
+
+# 4) Remove all build artifacts and intermediates
+.\gradlew clean         # wipes app/build, .cxx, etc.
+
+# 5) Go back to the project root and rebuild
+cd ..
+npx react-native run-android --device ovqcgmtc4trcm7tg
+
+
+netstat -aon | findstr :8081
+taskkill /PID 12345 /F
+
+=================================================================================================================================================================
+node -v
+npm -v
+python --version
+java -version
