@@ -169,3 +169,18 @@ On GCP or AWS, open ports 80 and 443 in your instance's firewall/security group 
 Your application running on port 8088 is now securely available at:  
 🔐 `https://admin.adorablealways.com`
 ```
+
+
+## Invalid Host header error webpage
+```bash
+location / {
+        proxy_pass http://127.0.0.1:8025;
+        proxy_http_version 1.1;
+        #proxy_set_header Host $host;
+        proxy_set_header Host 127.0.0.1;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_redirect off;
+    }
+```
