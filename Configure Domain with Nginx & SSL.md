@@ -168,7 +168,7 @@ On GCP or AWS, open ports 80 and 443 in your instance's firewall/security group 
 ## ✅ Final Output
 Your application running on port 8088 is now securely available at:  
 🔐 `https://admin.adorablealways.com`
-```
+
 
 
 ## Invalid Host header error webpage
