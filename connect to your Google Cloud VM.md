@@ -7,7 +7,7 @@ Perfect 👍 Since you’re on **Windows** and want to use your own SSH key (`ss
 If you have **Git Bash** or **PowerShell**, you can run:
 
 ```bash
-ssh-keygen -t rsa -b 4096 -f %USERPROFILE%\.ssh\gcp_key -C "your_email@example.com"
+ssh-keygen -t rsa -b 2048 -f %USERPROFILE%\.ssh\gcp_key -C "your_email@example.com"
 ```
 
 * It will create:
