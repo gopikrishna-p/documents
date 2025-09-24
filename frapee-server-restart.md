@@ -20,6 +20,18 @@ Check again:
 sudo lsof -i :12001
 sudo lsof -i :13001
 ```
+```bash
+#Kill everything in one shot (all redis, node, python in bench)
+pkill -f redis
+pkill -f node
+pkill -f python
+
+sudo fuser -k 12001/tcp
+sudo fuser -k 13001/tcp
+
+kill -9 35007 35003 35015 35074 35021 35023 35011 35018 226099
+
+```
 
 Both should be empty now.
 
@@ -31,6 +43,13 @@ Once ports are free:
 
 ```bash
 cd ~/frappe-bench-v15
+
+# Fix ownership (replace gcp_user with your actual username if different)
+sudo chown -R gcp_user:gcp_user .
+
+# Ensure logs directory is writable
+chmod -R 755 logs
+
 bench start
 ```
 
