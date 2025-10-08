@@ -90,6 +90,33 @@ To find that PRODUCTION_HOST use
 sudo netstat -tulnp | grep mongod
 ```
 ---
+### **Step 1: Export All Collections (Development Server)**
+#### 🔹 Export Entire Database (Recommended)
+```bash
+mongodump --uri="mongodb://localhost:27017" \
+--db=angel_ir_platform \
+--out=./backup
+```
+### **Step 2: Import to Production Server**
+#### 🔹 Using `mongorestore` (BSON Backup)
+
+```bash
+mongorestore --uri="mongodb://PRODUCTION_HOST:27017" \
+--db=angel_ir_platform \
+--drop \
+./backup/angel_ir_platform
+```
+
+**Explanation:**
+
+* `--drop` → Drops (deletes) existing collections **before restoring**, ensuring duplicates are replaced.
+* `--db=angel_ir_platform` → Restores into the same database name.
+* Replace `PRODUCTION_HOST` with the **actual IP or hostname** of your production server.
+
+✅ This ensures all data is overwritten cleanly.
+
+---
+
 
 ## 🧩 Basic MongoDB Commands
 
@@ -263,5 +290,3 @@ sudo systemctl restart mongod
 > 📝 **Tip:** Always take a backup before migration and test the imported data in production with a staging environment first.
 
 ---
-
-Would you like me to create this as a **`.md` file** (e.g., `User_Migration_Guide.md`) so you can save or upload it to your project repo directly?
