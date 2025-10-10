@@ -58,6 +58,20 @@ bench start
 ```bash
 bench restart
 ```
+```bash
+# Check supervisor status
+sudo supervisorctl status
+
+# Restart all processes
+sudo supervisorctl restart all
+
+# If socketio still fails, start it manually
+sudo supervisorctl start frappe-bench-v15-web:frappe-bench-v15-node-socketio
+
+# Check status again
+sudo supervisorctl status
+```
+
 
 ---
 
