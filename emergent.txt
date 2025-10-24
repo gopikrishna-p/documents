@@ -1,0 +1,91 @@
+# create the zip one level up, including everything in /app
+cd /app
+zip -r ../app.zip . -x ".git/*" "*/node_modules/*" "*/dist/*" "*/build/*" "*/.venv/*" "*.log"
+or
+zip -r app.zip app -x "app/.git/*" "app/*/node_modules/*" "app/*/dist/*" "app/*/build/*" "app/*/.venv/*" "*.log"
+
+
+# Ubuntu/Debian
+sudo apt-get update && sudo apt-get install -y zip
+# Alpine
+sudo apk add zip
+
+
+# move both zips into your workspace so they appear in Explorer
+mv /app.zip /app/ 2>/dev/null || true
+mv /YourProject.zip /app/ 2>/dev/null || true
+
+
+
+
+pm2 start "server.py" --name axitec-backend --interpreter python3
+pm2 start "npm start" --name axitec-frontend
+
+
+    "ajv": "^8.12.0",
+    "ajv-keywords": "^5.1.0",
+
+pm2 start "server.py" --name cfo-backend --interpreter python3
+mongorestore --uri="mongodb://127.0.0.1:27017" --db=v1_final_db --drop ./backup/v1_final_db
+
+npm install --legacy-peer-deps
+
+
+python -m venv venv
+source venv/bin/activate
+
+venv\Scripts\activate
+
+pip install -r requirements.txt
+
+deactivate
+
+
+app/backend/server.py    CFO
+----------------------------------------------------
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=5010)
+
+
+app/frontend/craco.config.js
+-----------------------------------------------------------
+  devServer: (devServerConfig) => {
+    devServerConfig.proxy = {
+      '/server': {
+        target: 'http://0.0.0.0:5010',
+        changeOrigin: true,
+        pathRewrite: { '^/server': '' },
+      },
+    };
+    return devServerConfig;
+  },
+
+
+app/frontend/package.json
+--------------------------------------------------------
+  "scripts": {
+    "start": "HOST=0.0.0.0 PORT=8010 craco start",
+    "build": "craco build",
+    "test": "craco test"
+  },
+
+
+
+app/backend/.env
+-----------------------------------------------
+MONGO_URL="mongodb://localhost:27017"
+DB_NAME="spearon_finance_dashboard"
+
+
+app/frontend/.env
+------------------------------------------------
+REACT_APP_BACKEND_URL=/server
+WDS_SOCKET_PORT=443
+
+===========================================================
+
+REACT_APP_BACKEND_URL = /server
+WDS_SOCKET_PORT = 443
+const API = process.env.NODE_ENV === 'development' ? '/api' : `${BACKEND_URL}/api`;
+const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
