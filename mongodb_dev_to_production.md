@@ -54,7 +54,7 @@ mongoexport --uri="mongodb://localhost:27017" --db=angel_ir_platform --collectio
 #### 🔹 Import Using `mongorestore`
 
 ```bash
-mongorestore --uri="mongodb://PRODUCTION_HOST:27017" \
+mongorestore --uri="mongodb://127.0.0.1:27017" \
 --db=angel_ir_platform \
 --collection=users \
 ./backup/angel_ir_platform/users.bson
