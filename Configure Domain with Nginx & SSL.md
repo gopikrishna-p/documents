@@ -87,7 +87,7 @@ server {
 
 ## 4️⃣ Enable the Nginx Configuration
 ```bash
-sudo ln -s /etc/nginx/sites-available/admin.adorablealways.com /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/spjimr.dev.deepgrid.in  /etc/nginx/sites-enabled/
 ```
 
 ---
