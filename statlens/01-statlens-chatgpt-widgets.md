@@ -642,8 +642,19 @@ Port **must** be `5432` (matching `infra/docker-compose.yml`).
 **Cause:** No data has been harvested yet. The 11 sources are registered but their catalogs are empty.  
 **Fix:** Harvest data for the sources you need:
 ```bash
+cd /mnt/volume_blr1_01/Enconvers/statlens
+
+# BEA
 uv run statlens harvest bea
 uv run statlens slice-generate bea
+
+# US Census
+uv run statlens harvest uscensus
+uv run statlens slice-generate uscensus
+
+# CDC
+uv run statlens harvest cdc
+uv run statlens slice-generate cdc
 ```
 
 ### "cloudflared: command not found"
